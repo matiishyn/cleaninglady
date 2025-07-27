@@ -1,7 +1,6 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Globe } from 'lucide-react';
 import { usePathname, useRouter } from 'next/navigation';
 
 export function LanguageSwitcher() {
@@ -26,15 +25,20 @@ export function LanguageSwitcher() {
     }
   };
 
+  // Показуємо прапорець тієї мови, на яку можна перемкнути
+  const targetFlag = currentLocale === 'uk' ? '🇬🇧' : '🇺🇦';
+  const targetText = currentLocale === 'uk' ? 'EN' : 'UA';
+
   return (
     <Button
       variant="outline"
       size="sm"
       onClick={handleLanguageSwitch}
-      className="flex items-center gap-2"
+      className="flex items-center gap-2 hover:scale-105 transition-transform"
+      title={currentLocale === 'uk' ? 'Switch to English' : 'Перемкнути на українську'}
     >
-      <Globe className="h-4 w-4" />
-      {currentLocale === 'uk' ? 'EN' : 'UA'}
+      <span className="text-lg">{targetFlag}</span>
+      <span className="font-medium">{targetText}</span>
     </Button>
   );
 }
