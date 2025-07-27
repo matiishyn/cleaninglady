@@ -11,7 +11,7 @@ export const translations = {
     },
     // Hero Section
     hero: {
-      title: 'Cleaning Lady IF',
+      title: 'Cleaning Lady',
       subtitle: 'Сімейна клінінгова компанія з Івано-Франківська',
       description: 'Ми — мама і теща, які прибирають з любов\'ю і турботою',
       cta: 'Замовити прибирання',
@@ -114,7 +114,7 @@ export const translations = {
     },
     // Footer
     footer: {
-      copy: '© 2024 Cleaning Lady IF. Всі права захищені.',
+      copy: '© 2025 Cleaning Lady. Всі права захищені.',
       madeby: 'Створено з ❤️ для сімейного бізнесу'
     }
   },
@@ -130,7 +130,7 @@ export const translations = {
     },
     // Hero Section
     hero: {
-      title: 'Cleaning Lady IF',
+      title: 'Cleaning Lady',
       subtitle: 'Family Cleaning Company from Ivano-Frankivsk',
       description: 'We are mother and mother-in-law who clean with love and care',
       cta: 'Order Cleaning',
@@ -233,7 +233,7 @@ export const translations = {
     },
     // Footer
     footer: {
-      copy: '© 2024 Cleaning Lady IF. All rights reserved.',
+      copy: '© 2024 Cleaning Lady. All rights reserved.',
       madeby: 'Made with ❤️ for family business'
     }
   }

@@ -6,29 +6,29 @@ import './globals.css';
 const nunito = Nunito({ subsets: ['latin', 'cyrillic'] });
 
 export const metadata: Metadata = {
-  title: 'Cleaning Lady IF - Сімейна клінінгова компанія Івано-Франківськ',
+  title: 'Cleaning Lady - Сімейна клінінгова компанія Івано-Франківськ',
   description: 'Професійні клінінгові послуги в Івано-Франківську, Богородчанах, Надвірній. Сімейна команда з досвідом 5+ років. Генеральне та підтримуюче прибирання від 45 грн/м².',
   keywords: 'клінінг Івано-Франківськ, прибирання квартир, клінінгова компанія, прибирання після ремонту, клінінг Богородчани, клінінг Надвірна',
-  authors: [{ name: 'Cleaning Lady IF' }],
+  authors: [{ name: 'Cleaning Lady' }],
   openGraph: {
     type: 'website',
     locale: 'uk_UA',
     url: 'https://cleaninglady.if',
-    siteName: 'Cleaning Lady IF',
-    title: 'Cleaning Lady IF - Сімейна клінінгова компанія',
+    siteName: 'Cleaning Lady',
+    title: 'Cleaning Lady - Сімейна клінінгова компанія',
     description: 'Професійні клінінгові послуги в Івано-Франківську. Прибираємо з любов\'ю і турботою для вашого комфорту.',
     images: [
       {
         url: 'https://cleaninglady.if/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Cleaning Lady IF - Сімейна клінінгова компанія',
+        alt: 'Cleaning Lady - Сімейна клінінгова компанія',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cleaning Lady IF - Сімейна клінінгова компанія',
+    title: 'Cleaning Lady - Сімейна клінінгова компанія',
     description: 'Професійні клінінгові послуги в Івано-Франківську',
     images: ['https://cleaninglady.if/og-image.jpg'],
   },
@@ -72,7 +72,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              "name": "Cleaning Lady IF",
+              "name": "Cleaning Lady",
               "description": "Сімейна клінінгова компанія з Івано-Франківська",
               "url": "https://cleaninglady.if",
               "telephone": "+380XXXXXXXXX",

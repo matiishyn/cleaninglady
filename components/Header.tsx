@@ -40,8 +40,8 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled
-          ? 'bg-white/95 backdrop-blur-sm shadow-md'
-          : 'bg-transparent'
+        ? 'bg-white/95 backdrop-blur-sm shadow-md'
+        : 'bg-transparent'
         }`}
     >
       <div className="container mx-auto px-4">
@@ -50,7 +50,7 @@ export function Header() {
           <div className="flex items-center">
             <img
               src="/logo.svg"
-              alt="Cleaning Lady IF"
+              alt="Cleaning Lady"
               className="h-10 w-auto"
             />
           </div>

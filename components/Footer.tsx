@@ -15,7 +15,7 @@ export function Footer() {
             <div className="flex items-center mb-4">
               <img
                 src="/logo.svg"
-                alt="Cleaning Lady IF"
+                alt="Cleaning Lady"
                 className="h-10 w-auto filter brightness-0 invert"
               />
             </div>
