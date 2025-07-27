@@ -1,7 +1,8 @@
 'use client';
 
+import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Badge, Clock, MapPin, Phone } from 'lucide-react';
+import { Clock, MapPin, Phone } from 'lucide-react';
 
 interface HeroSectionProps {
   dict: any;
@@ -72,16 +73,9 @@ export function HeroSection({ dict }: HeroSectionProps) {
                 style={{ filter: 'drop-shadow(1px 1px 2px rgba(255,255,255,0.8))' }}
               />
               <span style={{ textShadow: '1px 1px 3px rgba(255,255,255,0.8)' }}>
-                {dict.hero.location}
-                <Badge>
-                  Івано-Франківськ
-                </Badge>
-                <Badge>
-                  Богородчани
-                </Badge>
-                <Badge>
-                  Надвірна
-                </Badge>
+                <Badge className='mr-2' variant="secondary">{dict.hero.location.ivanoFrankivsk}</Badge>
+                <Badge className='mr-2' variant="secondary">{dict.hero.location.bohorodchany}</Badge>
+                <Badge className='mr-2' variant="secondary">{dict.hero.location.nadvirna}</Badge>
               </span>
             </div>
           </div>

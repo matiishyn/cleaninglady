@@ -14,7 +14,11 @@
     "description": "We are a family cleaning company that cleans with love and care",
     "orderButton": "Order Cleaning",
     "scheduleButton": "Working hours: Mon–Sat 09:00–19:00",
-    "location": "Ivano-Frankivsk, Bohorodchany, Nadvirna"
+    "location": {
+      "ivanoFrankivsk": "Ivano-Frankivsk",
+      "bohorodchany": "Bohorodchany",
+      "nadvirna": "Nadvirna"
+    }
   },
   "about": {
     "title": "About Us",
