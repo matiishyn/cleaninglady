@@ -1,64 +1,103 @@
-import { LanguageProvider } from '@/contexts/LanguageContext';
+import { locales, type Locale } from '@/lib/i18n';
 import type { Metadata } from 'next';
 import { Nunito } from 'next/font/google';
-import './globals.css';
+import { getDictionary } from '../dictionaries';
+import '../globals.css';
 
 const nunito = Nunito({ subsets: ['latin', 'cyrillic'] });
 
-export const metadata: Metadata = {
-  title: 'Cleaning Lady - Сімейна клінінгова компанія Івано-Франківськ',
-  description: 'Професійні клінінгові послуги в Івано-Франківську, Богородчанах, Надвірній. Сімейна команда з досвідом 5+ років. Генеральне та підтримуюче прибирання від 45 грн/м².',
-  keywords: 'клінінг Івано-Франківськ, прибирання квартир, клінінгова компанія, прибирання після ремонту, клінінг Богородчани, клінінг Надвірна',
-  authors: [{ name: 'Cleaning Lady' }],
-  openGraph: {
-    type: 'website',
-    locale: 'uk_UA',
-    url: 'https://cleaninglady.if',
-    siteName: 'Cleaning Lady',
-    title: 'Cleaning Lady - Сімейна клінінгова компанія',
-    description: 'Професійні клінінгові послуги в Івано-Франківську. Прибираємо з любов\'ю і турботою для вашого комфорту.',
-    images: [
-      {
-        url: 'https://cleaninglady.if/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Cleaning Lady - Сімейна клінінгова компанія',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Cleaning Lady - Сімейна клінінгова компанія',
-    description: 'Професійні клінінгові послуги в Івано-Франківську',
-    images: ['https://cleaninglady.if/og-image.jpg'],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ locale: Locale }>
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const dict = await getDictionary(locale);
+
+  const isUkrainian = locale === 'uk';
+  const baseUrl = 'https://cleaninglady.if';
+  const currentUrl = isUkrainian ? baseUrl : `${baseUrl}/${locale}`;
+
+  return {
+    title: isUkrainian ?
+      'Cleaning Lady - Сімейна клінінгова компанія Івано-Франківськ' :
+      'Cleaning Lady - Family Cleaning Company Ivano-Frankivsk',
+    description: isUkrainian ?
+      'Професійні клінінгові послуги в Івано-Франківську, Богородчанах, Надвірній. Сімейна команда з досвідом 5+ років. Генеральне та підтримуюче прибирання від 45 грн/м².' :
+      'Professional cleaning services in Ivano-Frankivsk, Bohorodchany, Nadvirna. Family team with 5+ years of experience. General and maintenance cleaning from 45 UAH/m².',
+    keywords: isUkrainian ?
+      'клінінг Івано-Франківськ, прибирання квартир, клінінгова компанія, прибирання після ремонту, клінінг Богородчани, клінінг Надвірна' :
+      'cleaning Ivano-Frankivsk, apartment cleaning, cleaning company, post-renovation cleaning, cleaning Bohorodchany, cleaning Nadvirna',
+    authors: [{ name: 'Cleaning Lady' }],
+    openGraph: {
+      type: 'website',
+      locale: isUkrainian ? 'uk_UA' : 'en_US',
+      url: currentUrl,
+      siteName: 'Cleaning Lady',
+      title: isUkrainian ?
+        'Cleaning Lady - Сімейна клінінгова компанія' :
+        'Cleaning Lady - Family Cleaning Company',
+      description: isUkrainian ?
+        'Професійні клінінгові послуги в Івано-Франківську. Прибираємо з любов\'ю і турботою для вашого комфорту.' :
+        'Professional cleaning services in Ivano-Frankivsk. We clean with love and care for your comfort.',
+      images: [
+        {
+          url: `${baseUrl}/og-image.jpg`,
+          width: 1200,
+          height: 630,
+          alt: isUkrainian ?
+            'Cleaning Lady - Сімейна клінінгова компанія' :
+            'Cleaning Lady - Family Cleaning Company',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: isUkrainian ?
+        'Cleaning Lady - Сімейна клінінгова компанія' :
+        'Cleaning Lady - Family Cleaning Company',
+      description: isUkrainian ?
+        'Професійні клінінгові послуги в Івано-Франківську' :
+        'Professional cleaning services in Ivano-Frankivsk',
+      images: [`${baseUrl}/og-image.jpg`],
+    },
+    robots: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
-  },
-  alternates: {
-    canonical: 'https://cleaninglady.if',
-    languages: {
-      'uk': 'https://cleaninglady.if',
-      'en': 'https://cleaninglady.if/en',
+    alternates: {
+      canonical: currentUrl,
+      languages: {
+        'x-default': baseUrl,
+        'uk': baseUrl,
+        'en': `${baseUrl}/en`,
+      },
     },
-  },
-};
+  };
+}
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ locale: Locale }>;
 }) {
+  const { locale } = await params;
+
   return (
-    <html lang="uk">
+    <html lang={locale}>
       <head>
         <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -77,6 +116,7 @@ export default function RootLayout({
         <meta name="business.phone" content="+380XXXXXXXXX" />
         <meta name="business.email" content="cleaninglady.if@gmail.com" />
         <meta name="business.hours" content="Mo-Sa 09:00-19:00" />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -163,9 +203,7 @@ export default function RootLayout({
         />
       </head>
       <body className={nunito.className}>
-        <LanguageProvider>
-          {children}
-        </LanguageProvider>
+        {children}
       </body>
     </html>
   );

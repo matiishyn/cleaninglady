@@ -1,32 +1,34 @@
 'use client';
 
-import { useLanguage } from '@/contexts/LanguageContext';
-import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Phone, Mail, Clock, MessageCircle, Send } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Clock, Mail, MessageCircle, Phone, Send } from 'lucide-react';
 
-export function ContactSection() {
-  const { t } = useLanguage();
+interface ContactSectionProps {
+  dict: any;
+}
+
+export function ContactSection({ dict }: ContactSectionProps) {
 
   const contactInfo = [
     {
       icon: Phone,
-      title: 'Телефон',
-      value: t.contact.phone,
+      title: dict.contact.phone,
+      value: '+38 (XXX) XXX-XX-XX',
       action: () => window.open('tel:+380XXXXXXXXX', '_blank'),
       color: 'text-teal-600'
     },
     {
       icon: Mail,
-      title: 'Email',
-      value: t.contact.email,
+      title: dict.contact.email,
+      value: 'cleaninglady.if@gmail.com',
       action: () => window.open('mailto:cleaninglady.if@gmail.com', '_blank'),
       color: 'text-cyan-600'
     },
     {
       icon: Clock,
-      title: 'Графік роботи',
-      value: t.contact.schedule,
+      title: dict.contact.schedule,
+      value: dict.contact.scheduleTime,
       action: null,
       color: 'text-blue-600'
     }
@@ -52,10 +54,10 @@ export function ContactSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            {t.contact.title}
+            {dict.contact.title}
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            {t.contact.subtitle}
+            {dict.contact.subtitle}
           </p>
         </div>
 
@@ -83,7 +85,7 @@ export function ContactSection() {
 
         <div className="text-center">
           <h3 className="text-2xl font-bold text-gray-900 mb-6">
-            {t.contact.socials}
+            {dict.contact.social}
           </h3>
           <div className="flex justify-center space-x-4">
             {socialLinks.map((social, index) => (

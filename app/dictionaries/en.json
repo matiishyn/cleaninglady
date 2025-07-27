@@ -1,0 +1,111 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About", 
+    "services": "Our Services",
+    "prices": "Our Prices",
+    "locations": "Locations",
+    "order": "Order Service",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Cleaning Lady Service",
+    "subtitle": "Family cleaning company from Ivano-Frankivsk",
+    "description": "We are a family cleaning company that cleans with love and care",
+    "orderButton": "Order Cleaning",
+    "scheduleButton": "Working hours: Mon–Sat 09:00–19:00",
+    "location": "Ivano-Frankivsk, Bohorodchany, Nadvirna"
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Professional family team",
+    "description": "We are a friendly family team with years of cleaning experience. Our mission is to make your home clean and cozy so you can enjoy time with your loved ones. We work with eco-friendly products and modern equipment.",
+    "experience": "Over 5 years of experience",
+    "clients": "200+ satisfied clients",
+    "guarantee": "100% quality guarantee"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Professional cleaning for your comfort",
+    "general": {
+      "title": "General Cleaning",
+      "description": "Complete apartment cleaning with thorough treatment of all surfaces, windows and hard-to-reach places"
+    },
+    "maintenance": {
+      "title": "Maintenance Cleaning", 
+      "description": "Regular cleaning to maintain cleanliness and order in your home"
+    },
+    "afterRepair": {
+      "title": "Post-Renovation Cleaning",
+      "description": "Professional cleaning of premises from construction dust and renovation residues"
+    },
+    "maid": {
+      "title": "Maid Service",
+      "description": "Individual maid work using client's cleaning products"
+    }
+  },
+  "prices": {
+    "title": "Our Prices",
+    "subtitle": "Transparent pricing without overpayments",
+    "general": "General Cleaning",
+    "afterRepair": "Post-Renovation", 
+    "maintenance": "Maintenance Cleaning",
+    "maid": "Maid Service",
+    "note": "Final cost is calculated individually depending on area and complexity of work",
+    "quality": "Quality"
+  },
+  "locations": {
+    "title": "Locations We Serve",
+    "subtitle": "Professional cleaning in your city",
+    "ifTitle": "Ivano-Frankivsk",
+    "ifDescription": "Main focus of our work. We provide all types of cleaning services in the capital of Prykarpattia. Professional cleaning of apartments, houses and offices in Ivano-Frankivsk.",
+    "bohorodchany": "Bohorodchany",
+    "nadvirna": "Nadvirna"
+  },
+  "order": {
+    "title": "Order Service",
+    "subtitle": "Contact us in a convenient way",
+    "form": {
+      "title": "Order Form",
+      "name": "Your Name",
+      "phone": "Phone Number",
+      "service": "Select Service",
+      "selectService": "Choose service",
+      "comment": "Comment (optional)",
+      "commentPlaceholder": "Additional information...",
+      "submit": "Send Request",
+      "namePlaceholder": "Enter name",
+      "phonePlaceholder": "+38 (0XX) XXX-XX-XX"
+    },
+    "quickContact": "Quick Contact",
+    "viber": "Message on Viber",
+    "call": "Call Us",
+    "whyUs": {
+      "title": "Why Choose Us?",
+      "family": "Family approach & care",
+      "eco": "Eco-friendly products",
+      "guarantee": "Quality guarantee",
+      "prices": "Affordable prices"
+    }
+  },
+  "contact": {
+    "title": "Contact", 
+    "subtitle": "Get in touch with us",
+    "phone": "Phone",
+    "email": "Email",
+    "schedule": "Working Hours",
+    "scheduleTime": "Mon–Sat: 09:00–19:00",
+    "social": "Social Media"
+  },
+  "footer": {
+    "description": "Family cleaning company from Ivano-Frankivsk. We clean with love and care for your comfort.",
+    "contacts": "Contact",
+    "services": "Our Services",
+    "general": "• General Cleaning",
+    "maintenance": "• Maintenance Cleaning", 
+    "afterRepair": "• Post-Renovation Cleaning",
+    "maid": "• Maid Service",
+    "copyright": "© 2025 Cleaning Lady. All rights reserved.",
+    "madeWith": "Made with ❤️ for family business"
+  }
+} 

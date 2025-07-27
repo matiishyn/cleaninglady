@@ -1,14 +1,16 @@
 'use client';
 
-import { useState } from 'react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
-import { Badge } from '@/components/ui/badge';
 import { ChevronDown, MapPin } from 'lucide-react';
+import { useState } from 'react';
 
-export function LocationsSection() {
-  const { t } = useLanguage();
+interface LocationsSectionProps {
+  dict: any;
+}
+
+export function LocationsSection({ dict }: LocationsSectionProps) {
   const [openItems, setOpenItems] = useState<number[]>([0]); // First item open by default
 
   const toggleItem = (index: number) => {
@@ -24,15 +26,31 @@ export function LocationsSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            {t.locations.title}
+            {dict.locations.title}
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            {t.locations.subtitle}
+            {dict.locations.subtitle}
           </p>
         </div>
 
         <div className="grid gap-6 max-w-4xl mx-auto">
-          {t.locations.items.map((location, index) => (
+          {[
+            {
+              name: dict.locations.ifTitle,
+              description: dict.locations.ifDescription,
+              keywords: ['клінінг Івано-Франківськ', 'прибирання квартир Івано-Франківськ', 'клінінгова компанія Івано-Франківськ']
+            },
+            {
+              name: dict.locations.bohorodchany,
+              description: 'Професійні клінінгові послуги в Богородчанах',
+              keywords: ['клінінг Богородчани']
+            },
+            {
+              name: dict.locations.nadvirna,
+              description: 'Якісне прибирання в Надвірній',
+              keywords: ['клінінг Надвірна']
+            }
+          ].map((location, index) => (
             <Card key={index} className="border-none shadow-lg bg-white">
               <Collapsible
                 open={openItems.includes(index)}
@@ -46,13 +64,12 @@ export function LocationsSection() {
                           <MapPin className="h-5 w-5 text-white" />
                         </div>
                         <CardTitle className="text-2xl font-bold text-gray-900">
-                          {location.city}
+                          {location.name}
                         </CardTitle>
                       </div>
                       <ChevronDown
-                        className={`h-6 w-6 transition-transform ${
-                          openItems.includes(index) ? 'rotate-180' : ''
-                        }`}
+                        className={`h-6 w-6 transition-transform ${openItems.includes(index) ? 'rotate-180' : ''
+                          }`}
                       />
                     </div>
                   </CardHeader>

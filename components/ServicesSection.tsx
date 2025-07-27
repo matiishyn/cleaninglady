@@ -1,28 +1,37 @@
 'use client';
 
-import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Home, RotateCcw, HardHat, User } from 'lucide-react';
+import { HardHat, Home, RotateCcw, User } from 'lucide-react';
 
-export function ServicesSection() {
-  const { t } = useLanguage();
+interface ServicesSectionProps {
+  dict: any;
+}
+
+export function ServicesSection({ dict }: ServicesSectionProps) {
 
   const serviceIcons = [Home, RotateCcw, HardHat, User];
+
+  const services = [
+    dict.services.general,
+    dict.services.maintenance,
+    dict.services.afterRepair,
+    dict.services.maid
+  ];
 
   return (
     <section id="services" className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            {t.services.title}
+            {dict.services.title}
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            {t.services.subtitle}
+            {dict.services.subtitle}
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {t.services.items.map((service, index) => {
+          {services.map((service, index) => {
             const Icon = serviceIcons[index];
             return (
               <Card

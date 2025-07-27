@@ -1,26 +1,27 @@
 'use client';
 
-import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
-import { Shield, Users, Award } from 'lucide-react';
+import { Award, Shield, Users } from 'lucide-react';
 
-export function AboutSection() {
-  const { t } = useLanguage();
+interface AboutSectionProps {
+  dict: any;
+}
 
+export function AboutSection({ dict }: AboutSectionProps) {
   const features = [
     {
       icon: Users,
-      title: t.about.experience,
+      title: dict.about.experience,
       color: 'text-teal-600'
     },
     {
       icon: Award,
-      title: t.about.clients,
+      title: dict.about.clients,
       color: 'text-cyan-600'
     },
     {
       icon: Shield,
-      title: t.about.guarantee,
+      title: dict.about.guarantee,
       color: 'text-blue-600'
     }
   ];
@@ -30,10 +31,10 @@ export function AboutSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            {t.about.title}
+            {dict.about.title}
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            {t.about.subtitle}
+            {dict.about.subtitle}
           </p>
         </div>
 
@@ -51,7 +52,7 @@ export function AboutSection() {
           {/* Content */}
           <div>
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-              {t.about.content}
+              {dict.about.description}
             </p>
 
             <div className="grid gap-6">

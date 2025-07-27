@@ -1,27 +1,34 @@
 'use client';
 
-import { useLanguage } from '@/contexts/LanguageContext';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle } from 'lucide-react';
 
-export function PricesSection() {
-  const { t } = useLanguage();
+interface PricesSectionProps {
+  dict: any;
+}
+
+export function PricesSection({ dict }: PricesSectionProps) {
 
   return (
     <section id="prices" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            {t.prices.title}
+            {dict.prices.title}
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            {t.prices.subtitle}
+            {dict.prices.subtitle}
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {t.prices.items.map((item, index) => (
+          {[
+            { service: dict.prices.general, price: 'від 80', unit: 'грн/м²' },
+            { service: dict.prices.afterRepair, price: 'від 100', unit: 'грн/м²' },
+            { service: dict.prices.maintenance, price: 'від 45', unit: 'грн/м²' },
+            { service: dict.prices.maid, price: 'від 450', unit: 'грн/год' }
+          ].map((item, index) => (
             <Card
               key={index}
               className="group hover:shadow-xl transition-all duration-300 border-2 border-gray-100 hover:border-teal-200 hover:-translate-y-1"
@@ -45,7 +52,7 @@ export function PricesSection() {
                   className="bg-teal-50 text-teal-700 hover:bg-teal-100"
                 >
                   <CheckCircle className="h-3 w-3 mr-1" />
-                  Якісно
+                  {dict.prices.quality}
                 </Badge>
               </CardContent>
             </Card>
@@ -54,7 +61,7 @@ export function PricesSection() {
 
         <div className="bg-gradient-to-r from-teal-50 to-cyan-50 rounded-2xl p-8 text-center">
           <p className="text-gray-700 text-lg leading-relaxed max-w-4xl mx-auto">
-            <strong>💡 Важливо:</strong> {t.prices.note}
+            <strong>💡 Важливо:</strong> {dict.prices.note}
           </p>
         </div>
       </div>

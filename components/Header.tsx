@@ -2,12 +2,14 @@
 
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { Button } from '@/components/ui/button';
-import { useLanguage } from '@/contexts/LanguageContext';
 import { Menu, Phone, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-export function Header() {
-  const { t } = useLanguage();
+interface HeaderProps {
+  dict: any;
+}
+
+export function Header({ dict }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -21,12 +23,12 @@ export function Header() {
   }, []);
 
   const menuItems = [
-    { href: '#home', label: t.nav.home },
-    { href: '#about', label: t.nav.about },
-    { href: '#services', label: t.nav.services },
-    { href: '#prices', label: t.nav.prices },
-    { href: '#locations', label: t.nav.locations },
-    { href: '#order', label: t.nav.order },
+    { href: '#home', label: dict.nav.home },
+    { href: '#about', label: dict.nav.about },
+    { href: '#services', label: dict.nav.services },
+    { href: '#prices', label: dict.nav.prices },
+    { href: '#locations', label: dict.nav.locations },
+    { href: '#order', label: dict.nav.order },
   ];
 
   const scrollToSection = (href: string) => {
@@ -76,7 +78,7 @@ export function Header() {
               className="bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700"
             >
               <Phone className="h-4 w-4 mr-2" />
-              {t.hero.cta}
+              {dict.hero.orderButton}
             </Button>
           </div>
 
@@ -112,7 +114,7 @@ export function Header() {
                   className="w-full bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700"
                 >
                   <Phone className="h-4 w-4 mr-2" />
-                  {t.hero.cta}
+                  {dict.hero.orderButton}
                 </Button>
               </div>
             </nav>
