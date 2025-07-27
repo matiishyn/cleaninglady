@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yourcleaningsite.com/sitemap.xml
+Sitemap: https://cleaninglady.if/sitemap.xml

@@ -66,6 +66,17 @@ export default function RootLayout({
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <meta name="apple-mobile-web-app-title" content="CleaningLady" />
         <link rel="manifest" href="/site.webmanifest" />
+
+        {/* Local SEO Meta Tags */}
+        <meta name="geo.region" content="UA-26" />
+        <meta name="geo.placename" content="Івано-Франківськ" />
+        <meta name="geo.position" content="48.9226;24.7111" />
+        <meta name="ICBM" content="48.9226, 24.7111" />
+
+        {/* Business Meta Tags */}
+        <meta name="business.phone" content="+380XXXXXXXXX" />
+        <meta name="business.email" content="cleaninglady.if@gmail.com" />
+        <meta name="business.hours" content="Mo-Sa 09:00-19:00" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -92,7 +103,61 @@ export default function RootLayout({
                 "@type": "Place",
                 "name": "Івано-Франківськ, Богородчани, Надвірна"
               },
-              "priceRange": "45-450 UAH"
+              "priceRange": "45-450 UAH",
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Клінінгові послуги",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Генеральне прибирання",
+                      "description": "Повне прибирання квартири з ретельною обробкою всіх поверхонь"
+                    },
+                    "priceSpecification": {
+                      "@type": "PriceSpecification",
+                      "price": "45-65",
+                      "priceCurrency": "UAH",
+                      "unitCode": "MTK"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Підтримуюче прибирання",
+                      "description": "Регулярне прибирання для підтримання чистоти"
+                    },
+                    "priceSpecification": {
+                      "@type": "PriceSpecification",
+                      "price": "45-55",
+                      "priceCurrency": "UAH",
+                      "unitCode": "MTK"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Прибирання після ремонту",
+                      "description": "Професійне очищення від будівельного пилу"
+                    },
+                    "priceSpecification": {
+                      "@type": "PriceSpecification",
+                      "price": "65-85",
+                      "priceCurrency": "UAH",
+                      "unitCode": "MTK"
+                    }
+                  }
+                ]
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "47",
+                "bestRating": "5"
+              }
             })
           }}
         />

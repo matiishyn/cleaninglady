@@ -25,7 +25,7 @@ export function HeroSection() {
       <div className="container mx-auto px-4">
         <div className="max-w-2xl">
           {/* Content */}
-          <div className="text-center lg:text-left">
+          <div className="text-left lg:text-left">
             <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
               {t.hero.title}
             </h1>
