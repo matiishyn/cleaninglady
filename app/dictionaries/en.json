@@ -33,15 +33,18 @@
     "subtitle": "Professional cleaning for your comfort",
     "general": {
       "title": "General Cleaning",
-      "description": "Complete apartment cleaning with thorough treatment of all surfaces, windows and hard-to-reach places"
+      "description": "Complete apartment cleaning with thorough treatment of all surfaces, windows and hard-to-reach places",
+      "shortDesc": "Deep comprehensive cleaning"
     },
     "maintenance": {
       "title": "Maintenance Cleaning", 
-      "description": "Regular cleaning to maintain cleanliness and order in your home"
+      "description": "Regular cleaning to maintain cleanliness and order in your home",
+      "shortDesc": "Regular upkeep cleaning"
     },
     "afterRepair": {
       "title": "Post-Renovation Cleaning",
-      "description": "Professional cleaning of premises from construction dust and renovation residues"
+      "description": "Professional cleaning of premises from construction dust and renovation residues",
+      "shortDesc": "Construction dust removal"
     },
     "maid": {
       "title": "Maid Service",
@@ -67,19 +70,37 @@
     "nadvirna": "Nadvirna"
   },
   "order": {
-    "title": "Order Service",
-    "subtitle": "Contact us in a convenient way",
-    "form": {
-      "title": "Order Form",
-      "name": "Your Name",
-      "phone": "Phone Number",
-      "service": "Select Service",
-      "selectService": "Choose service",
-      "comment": "Comment (optional)",
-      "commentPlaceholder": "Additional information...",
-      "submit": "Send Request",
-      "namePlaceholder": "Enter name",
-      "phonePlaceholder": "+38 (0XX) XXX-XX-XX"
+    "title": "Price Calculator",
+    "subtitle": "Calculate cleaning cost online",
+    "calculator": {
+      "title": "Cleaning Cost Calculation",
+      "cleaningType": "Cleaning Type",
+      "selectCleaningType": "Choose cleaning type",
+      "propertyType": "Property Type",
+      "apartment": "Apartment",
+      "apartmentDesc": "Multi-story building",
+      "house": "Private House",
+      "houseDesc": "Detached house",
+      "area": "Property Area (m²)",
+      "areaPlaceholder": "Enter area",
+      "decreaseArea": "Decrease area",
+      "increaseArea": "Increase area",
+      "windows": "Number of Windows",
+      "windowsPlaceholder": "Number of windows",
+      "decreaseWindows": "Decrease windows",
+      "increaseWindows": "Increase windows",
+      "bathrooms": "Number of Bathrooms",
+      "selectBathrooms": "Select quantity",
+      "decreaseBathrooms": "Decrease bathrooms",
+      "increaseBathrooms": "Increase bathrooms",
+      "additionalServices": "Additional Services",
+      "fridgeCleaning": "Fridge interior cleaning",
+      "ovenCleaning": "Oven cleaning",
+      "washingMachineCleaning": "Washing machine cleaning",
+      "dishwashing": "Dishwashing",
+      "calculate": "Calculate Cost",
+      "estimatedPrice": "Estimated Price:",
+      "finalNote": "Final cost is calculated individually after site inspection"
     },
     "quickContact": "Quick Contact",
     "viber": "Message on Viber",

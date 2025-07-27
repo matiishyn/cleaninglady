@@ -11,6 +11,33 @@ export interface ContactFormData {
   comment: string;
 }
 
+export interface PriceCalculatorData {
+  cleaningType: string;
+  propertyType: 'apartment' | 'house';
+  area: number;
+  windows: number;
+  bathrooms: number;
+  additionalServices: {
+    fridgeCleaning: boolean;
+    ovenCleaning: boolean;
+    washingMachineCleaning: boolean;
+    dishwashing: boolean;
+  };
+}
+
+export interface PriceResult {
+  basePrice: number;
+  additionalServicesPrice: number;
+  totalPrice: number;
+  breakdown: {
+    area: number;
+    windows: number;
+    bathrooms: number;
+    propertyType: number;
+    additionalServices: number;
+  };
+}
+
 export interface Service {
   title: string;
   description: string;
