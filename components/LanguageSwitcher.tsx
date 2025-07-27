@@ -27,7 +27,7 @@ export function LanguageSwitcher() {
 
   // Показуємо прапорець тієї мови, на яку можна перемкнути
   const targetFlag = currentLocale === 'uk' ? '🇬🇧' : '🇺🇦';
-  const targetText = currentLocale === 'uk' ? 'EN' : 'UA';
+  const targetText = currentLocale === 'uk' ? 'English' : 'Українська';
 
   return (
     <Button
