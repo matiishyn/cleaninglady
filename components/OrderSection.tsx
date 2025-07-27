@@ -7,7 +7,7 @@ import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
 import { ContactFormData } from '@/types';
-import { MessageSquare, Phone, Send } from 'lucide-react';
+import { Instagram, MessageSquare, Phone, Send } from 'lucide-react';
 import { useState } from 'react';
 
 interface OrderSectionProps {
@@ -168,6 +168,16 @@ export function OrderSection({ dict }: OrderSectionProps) {
                 >
                   <MessageSquare className="h-5 w-5 mr-3" />
                   {dict.order.viber}
+                </Button>
+
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="w-full h-14 border-2 border-pink-500 text-pink-600 hover:bg-pink-50"
+                  onClick={() => window.open('https://instagram.com/cleaninglady.if', '_blank')}
+                >
+                  <Instagram className="h-5 w-5 mr-3" />
+                  {dict.order.instagram}
                 </Button>
 
                 <Button

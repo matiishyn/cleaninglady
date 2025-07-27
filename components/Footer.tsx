@@ -1,6 +1,6 @@
 'use client';
 
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Instagram, Mail, MapPin, Phone } from 'lucide-react';
 
 interface FooterProps {
   dict: any;
@@ -35,6 +35,17 @@ export function Footer({ dict }: FooterProps) {
               <div className="flex items-center">
                 <Mail className="h-4 w-4 mr-3 text-teal-400" />
                 <span>cleaninglady.if@gmail.com</span>
+              </div>
+              <div className="flex items-center">
+                <Instagram className="h-4 w-4 mr-3 text-teal-400" />
+                <a
+                  href="https://instagram.com/cleaninglady.if"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  @cleaninglady.if
+                </a>
               </div>
             </div>
           </div>

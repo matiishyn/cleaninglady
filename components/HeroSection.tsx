@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Clock, MapPin, Phone } from 'lucide-react';
+import { Badge, Clock, MapPin, Phone } from 'lucide-react';
 
 interface HeroSectionProps {
   dict: any;
@@ -73,6 +73,15 @@ export function HeroSection({ dict }: HeroSectionProps) {
               />
               <span style={{ textShadow: '1px 1px 3px rgba(255,255,255,0.8)' }}>
                 {dict.hero.location}
+                <Badge>
+                  Івано-Франківськ
+                </Badge>
+                <Badge>
+                  Богородчани
+                </Badge>
+                <Badge>
+                  Надвірна
+                </Badge>
               </span>
             </div>
           </div>

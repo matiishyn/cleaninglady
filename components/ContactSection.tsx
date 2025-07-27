@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Clock, Mail, MessageCircle, Phone, Send } from 'lucide-react';
+import { Clock, Instagram, Mail, MessageCircle, Phone, Send } from 'lucide-react';
 
 interface ContactSectionProps {
   dict: any;
@@ -46,6 +46,12 @@ export function ContactSection({ dict }: ContactSectionProps) {
       icon: Send,
       color: 'bg-blue-500 hover:bg-blue-600',
       url: 'https://t.me/cleaningladyif'
+    },
+    {
+      name: 'Instagram',
+      icon: Instagram,
+      color: 'bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600',
+      url: 'https://instagram.com/cleaninglady.if'
     }
   ];
 
